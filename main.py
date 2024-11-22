@@ -2,13 +2,13 @@ import secrets
 import string
 
 # Configuration settings
-count = 10  # Number of passwords to generate
-length = 12  # Desired password length
+count = 1000  # Number of passwords to generate
+length = 20  # Desired password length
 use_uppercase = True  # Include uppercase letters
 use_lowercase = True  # Include lowercase letters
 use_digits = True  # Include digits
 use_special = True  # Include special symbols
-excluded_characters = ":a4"  # Characters to exclude (e.g., ":" or "a" or "4")
+excluded_characters = ""  # Characters to exclude (e.g., ":" or "a" or "4")
 
 
 def generate_passwords(count, length, use_uppercase, use_lowercase, use_digits, use_special, excluded_characters):
@@ -42,6 +42,6 @@ passwords = generate_passwords(count, length, use_uppercase, use_lowercase, use_
 # Save passwords to a file
 with open("pswd.txt", "w") as file:
     for i, password in enumerate(passwords, start=1):
-        file.write(f"{i}: {password}\n")
+        file.write(f"{password}\n")
 
 print("Passwords have been generated securely and saved to 'pswd.txt'.")
